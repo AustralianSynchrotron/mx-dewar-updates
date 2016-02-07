@@ -12,6 +12,11 @@ def client():
     context.pop()
 
 
-def test_can_load_index(client):
-    response = client.get(url_for('main.index'))
+def test_post_dewar_arrival_to_actions(client):
+    data = {
+        'type': 'UPDATE_DEWAR',
+        'dewar': '1',
+        'onsite': True,
+    }
+    response = client.post(url_for('main.actions'), data=data)
     assert response.status_code == 200
