@@ -8,5 +8,8 @@ setup(
     name='mxshipalerts',
     version=version,
     packages=['mxshipalerts'],
-    install_requires=[],
+    install_requires=[
+        'Flask',
+        'pdfkit',
+    ],
 )

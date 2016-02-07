@@ -12,7 +12,7 @@ def client():
     context.pop()
 
 
-def test_post_dewar_arrival_to_actions(client):
+def test_post_dewar_arrival_to_actions(client, monkeypatch):
     data = {
         'type': 'UPDATE_DEWAR',
         'dewar': '1',
