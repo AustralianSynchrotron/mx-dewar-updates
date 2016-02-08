@@ -10,6 +10,8 @@ setup(
     packages=['mxshipalerts'],
     install_requires=[
         'Flask',
+        'Flask-Script',
         'pdfkit',
+        'requests',
     ],
 )
