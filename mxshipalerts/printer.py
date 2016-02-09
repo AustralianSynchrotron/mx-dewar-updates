@@ -1,15 +1,14 @@
-from tempfile import NamedTemporaryFile
 import pdfkit
-import requests
 import subprocess
+from itertools import chain
 
 
-def save_page(url):
-    file = NamedTemporaryFile(delete=False, suffix='.pdf')
-    response = requests.get(url)
-    pdfkit.from_string(response.text, file.name)
-    return file.name
+def page_to_pdf(url, file):
+    file.write(pdfkit.from_url(url, False))
 
 
-def print_file(filename, *args):
-    subprocess.check_output(['lpr', *args, 'file.pdf'])
+def print_file(filename, options=None):
+    if options is None:
+        options = []
+    options = chain.from_iterable(('-o', option) for option in options)
+    subprocess.check_output(['lpr', *options, filename])

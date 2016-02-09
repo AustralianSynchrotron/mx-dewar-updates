@@ -8,7 +8,7 @@ class Config:
 class TestingConfig(Config):
     TESTING = True
     SERVER_NAME = 'localhost:4999'
-    PUCKTRACKER_URL = 'http://pucktracker-test'
+    PUCKTRACKER_URL = 'http://localhost:8002'
 
 
 class DevelopmentConfig(Config):

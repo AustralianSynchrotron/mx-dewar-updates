@@ -1,184 +1,56 @@
-<html>
-  <head>
-    <style>
-      body {        height: 297mm;        width: 210mm;        margin-left: auto;        margin-right: auto;    }
-    </style>
-  </head>
-  <body>
-    <h1 ALIGN=CENTER>
-      MX dewar shipment information</h1>
-    <table WIDTH="100%" BORDER=1 RULES=ROWS FRAME=BOX CELLPADDING=9 CELLSPACING=9>
-      <COL WIDTH="80%">
-      <COL WIDTH="20%">
-      <tr>
-        <td>
-          <table>
-            <tr>
-              <td>
-                <h3>FROM:</h3>
-              </td>
-            </tr>
-            <tr><td id="owner">{{owner}}</td></tr>
-            <tr><td id="department">{{department}}</td></tr>
-            <tr><td id="institute">{{institute}}</td></tr>
-            <tr><td id="street_address">{{street_address}}</td></tr>
-            <tr><td id="city">{{city}}</td></tr>
-            <tr><td id="state">{{state}}</td></tr>
-            <tr><td id="postcode">{{postcode}}</td></tr>
-            <tr><td id="country">{{country}}</td></tr>
-            <tr><td></td></tr>
-            <tr><td>Contact Phone:</td><td id="phone">{{phone}}</td></tr>
-            <tr><td>Contact Email:</td><td id="email">{{email}}</td></tr>
-          </table>
-        </td>
-        <td>
-          <div ALIGN=RIGHT>
-            <table>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>
-                    <h2>Dewar Filled</h2>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>
-                    <img alt="Arrived" src="filled.png" />
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table>
-            <tr><td id="epn">EPN is {{epn}}</td></tr>
-            <tr><td id="name">Dewar ID is {{name}}</td></tr>
-            {% if return_dewar %}
-              <tr><td>User wants samples returned by courier</td></tr>
-            {% endif %}
-            <tr><td id="courier">Using courier {{courier}}</td></tr>
-            <tr>
-              <td id="courier_account">With account number {{courier_account}}</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <div ALIGN=RIGHT>
-            <table>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>
-                    <h2>place holder for BL</h2>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>Place holder for BL bar</div>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table WIDTH="100%">
-            <COL WIDTH="33%">
-            <COL WIDTH="33%">
-            <COL WIDTH="33%">
-            <tr><td colspan="3">Cassette IDs are:</td></tr>
-            <tr>
-              <td colspan="3">
-                <div style="width:100%;border:1px solid grey">
-                  ASP0017, ASP0018</div>
-              </td>
-            </tr>
-            <tr><td colspan="3">Transferred to robot dewar:</td></tr>
-            <tr>
-              <td>
-                <div ALIGN=CENTER STYLE="width:100%;border:1px solid grey">
-                  left
-                </div>
-              </td>
-              <td></td>
-              <td>
-                <div ALIGN=CENTER STYLE="width:100%;border:1px solid grey">
-                  right
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <table WIDTH="100%" BORDER=1>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </table>
-              </td>
-              <td ALIGN=CENTER VALIGN=BOTTOM>
-                <div ALIGN=CENTER STYLE="width:100%;border:1px solid grey">
-                  middle
-                </div>
-              </td>
-              <td>
-                <table WIDTH="100%" BORDER=1>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <table WIDTH="100%" BORDER=1>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </table>
-              </td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <div ALIGN=RIGHT>
-            <table>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>
-                    <h2>Dewar Departed</h2>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div ALIGN=RIGHT>
-                    <img alt="Departed" src="departed.png" />
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-      <tr style="height:70px">
-        <td valign="bottom">
-          All user samples returned to dewar by:_________________________
-        </td>
-        <td valign="bottom">
-          Date:
-        </td>
-      </tr>
-    </table>
-    </td>
-    </tr>
-    </table>
-  </body>
-</html>
+{% extends 'bootstrap/base.html' %}
 
+{% block title %}Dewar Arrival Slip{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>MX Dewar Shipment Information</h1>
+    <section class="row">
+      <div class="col-xs-8">
+        <h3>Sender</h3>
+        <p id="owner">{{owner}}</p>
+        <p id="department">{{department}}</p>
+        <p id="institute">{{institute}}</p>
+        <p id="street_address">{{streetAddress}}</p>
+        <p id="city">{{city}}</p>
+        <p id="state">{{state}}</p>
+        <p id="postcode">{{postcode}}</p>
+        <p id="country">{{country}}</p>
+        <p id="phone">Contact Phone: {{phone}}</p>
+        <p id="email">Contact Email: {{email}}</p>
+        <p id="epn">EPN is {{epn}}</p>
+        <p id="name">Dewar ID is {{name}}</p>
+        {% if returnDewar %}
+          <p>User wants samples returned by courier</p>
+        {% endif %}
+        <p id="courier">Using courier {{courier}}</p>
+        <p id="courier_account">With account number {{courierAccount}}</p>
+      </div>
+      <div id="filled_code" class="col-xs-4">
+        <div class="pull-right">
+        <h3>Dewar Filled</h3>
+        <img class="barcode" src="{{ qrcode(filled_payload, box_size=6) }}">
+        </div>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-xs-8">
+        <h3>Departure</h3>
+        <p id="containers">Containers IDs are: {{expectedContainers}}</p>
+        <p>All samples returned to dewar by: _______________________</p>
+        <p>Date: _________________________</p>
+      </div>
+      <div id="departed_code" class="col-xs-4">
+        <div class="pull-right">
+          <h3>Dewar Departed</h3>
+          <img class="barcode" src="{{ qrcode(departed_payload, box_size=6) }}">
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}

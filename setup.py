@@ -11,7 +11,9 @@ setup(
     install_requires=[
         'Flask',
         'Flask-Script',
-        'pdfkit',
         'requests',
+        'pdfkit',
+        'Flask-QRcode',
+        'Flask-Bootstrap',
     ],
 )
