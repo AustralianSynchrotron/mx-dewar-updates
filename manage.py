@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask.ext.script import Manager
-from mxshipalerts import create_app
+from dewarupdates import create_app
 
 
 if __name__ == '__main__':

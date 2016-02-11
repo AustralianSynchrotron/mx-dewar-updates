@@ -1,13 +1,13 @@
 from setuptools import setup
 import re
 
-with open('mxshipalerts/__init__.py') as file:
+with open('dewarupdates/__init__.py') as file:
     version = re.search(r"__version__ = '(.*)'", file.read()).group(1)
 
 setup(
-    name='mxshipalerts',
+    name='dewarupdates',
     version=version,
-    packages=['mxshipalerts'],
+    packages=['dewarupdates'],
     install_requires=[
         'Flask',
         'Flask-Script',

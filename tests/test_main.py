@@ -1,4 +1,4 @@
-from mxshipalerts.printer import page_to_pdf
+from dewarupdates.printer import page_to_pdf
 from flask import url_for
 from bs4 import BeautifulSoup
 from PIL import Image

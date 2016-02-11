@@ -1,4 +1,4 @@
-from mxshipalerts import utils
+from dewarupdates import utils
 import json
 
 

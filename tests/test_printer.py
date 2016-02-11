@@ -1,4 +1,4 @@
-from mxshipalerts.printer import page_to_pdf, print_file
+from dewarupdates.printer import page_to_pdf, print_file
 from flask import url_for
 from unittest.mock import call, patch
 from PyPDF2 import PdfFileReader

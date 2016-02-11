@@ -1,4 +1,4 @@
-from mxshipalerts import create_app
+from dewarupdates import create_app
 from flask import url_for, current_app
 import pytest
 import requests
