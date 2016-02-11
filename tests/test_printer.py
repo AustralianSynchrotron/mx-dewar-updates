@@ -1,4 +1,4 @@
-from dewarupdates.printer import page_to_pdf, print_file
+from dewarupdates.printer import page_to_pdf, print_file, print_page
 from flask import url_for
 from unittest.mock import call, patch
 from PyPDF2 import PdfFileReader
@@ -17,3 +17,13 @@ def test_print_file():
         print_file('the-file.pdf', options=['InputSlot=Tray2'])
         expected_command = call(['lpr', '-o', 'InputSlot=Tray2', 'the-file.pdf'])
         assert check_output_mock.call_args == expected_command
+
+
+def test_print_page():
+    with patch('dewarupdates.printer.print_file') as print_file:
+        print_page('http://example.com/')
+        assert print_file.called is True
+        filename = print_file.call_args[0][0]
+        options = print_file.call_args[1]['options']
+        assert filename.endswith('.pdf')
+        assert options[0] == 'InputSlot=Tray2'

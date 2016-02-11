@@ -1,4 +1,4 @@
-from flask import render_template, current_app, abort
+from flask import request, render_template, current_app, abort, jsonify, url_for
 import requests
 import json
 from . import main
@@ -6,9 +6,20 @@ from .. import printer
 from ..utils import dewar_filled_payload, dewar_departed_payload
 
 
+def print_arrival_slip(dewar_name):
+    url = url_for('.arrival_slip', dewar_name=dewar_name, _external=True)
+    printer.print_page(url)
+
+
 @main.route('/actions', methods=['POST'])
 def actions():
-    return 'Works!'
+    request.get_json(force=True)
+    action = request.json
+    if action['type'] == 'UPDATE_DEWAR' and action['update'].get('onsite'):
+        print_arrival_slip(action['dewar'])
+    else:
+        return jsonify({'error': 'Unhandled action: %s' % action})
+    return jsonify({'data': 'ok'})
 
 
 @main.route('/arrival-slip/<dewar_name>')

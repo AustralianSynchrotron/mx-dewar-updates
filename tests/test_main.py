@@ -1,4 +1,5 @@
 from dewarupdates.printer import page_to_pdf
+from unittest.mock import patch, call
 from flask import url_for
 from bs4 import BeautifulSoup
 from PIL import Image
@@ -21,14 +22,24 @@ def load_qrcode(image):
     return json.loads(code.decode('utf-8'))
 
 
-def test_post_dewar_arrival_to_actions(client, monkeypatch):
+def test_post_dewar_arrival_to_actions(client):
     data = {
         'type': 'UPDATE_DEWAR',
-        'dewar': '1',
-        'onsite': True,
+        'dewar': 'd-123a-1',
+        'update': {'onsite': True},
     }
-    response = client.post(url_for('main.actions'), data=data)
-    assert response.status_code == 200
+    with patch('dewarupdates.printer.print_page') as print_page:
+        response = client.post(url_for('main.actions'), data=json.dumps(data))
+        assert response.status_code == 200
+        assert json.loads(response.data.decode('utf-8'))['data'] == 'ok'
+        url = url_for('main.arrival_slip', dewar_name='d-123a-1')
+        assert print_page.call_args == call(url)
+
+
+def test_post_dewar_with_unhandled_action_type(client):
+    data = {'type': 'AN_UNHANDLED_ACTION_TYPE'}
+    response = client.post(url_for('main.actions'), data=json.dumps(data))
+    assert json.loads(response.data.decode('utf-8'))['error']
 
 
 def test_get_dewar_arrival_page(client, db):
