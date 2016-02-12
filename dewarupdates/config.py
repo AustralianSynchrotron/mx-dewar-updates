@@ -12,11 +12,17 @@ class TestingConfig(Config):
 
 
 class DevelopmentConfig(Config):
-    PUCKTRACKER_URL = os.environ.get('PUCKTRACKER_DEV_URL', 'http://localhost:8001')
+    PUCKTRACKER_URL = os.environ.get('PUCKTRACKER_URL', 'http://localhost:8001')
     DEBUG = True
+
+
+class ProductionConfig(Config):
+    PUCKTRACKER_URL = os.environ.get('PUCKTRACKER_URL',
+                                     'http://pucks.synchrotron.org.au')
 
 
 config = {
     'testing': TestingConfig,
     'development': DevelopmentConfig,
+    'production': ProductionConfig,
 }
