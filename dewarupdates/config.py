@@ -18,7 +18,7 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     PUCKTRACKER_URL = os.environ.get('PUCKTRACKER_URL',
-                                     'http://pucks.synchrotron.org.au')
+                                     'http://pucks.synchrotron.org.au:8080')
 
 
 config = {
