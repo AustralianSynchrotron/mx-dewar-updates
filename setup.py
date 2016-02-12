@@ -17,6 +17,8 @@ setup(
         'Flask-Bootstrap',
         'socketIO_client',
         'click',
+        'MailShake',
+        'jinja2',
     ],
     entry_points={
         'console_scripts': [

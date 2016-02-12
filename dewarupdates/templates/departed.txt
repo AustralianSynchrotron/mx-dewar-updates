@@ -1,0 +1,22 @@
+Dear user of the MX beamlines,
+
+This is an automated email to let you know that a dewar associated with this email address (ID number {{dewar['name']}}) has been recorded in our dewar tracking system as having left the beamline.
+
+This will mean that your dewar was emptied of liquid nitrogen and one of the following actions taken:
+
+1 - If you previously selected the dewar to be returned, it was moved from the MX beamlines to our stores ready for uplift by your nominated courier. It will be shipped in the next 24h.
+or
+2 - If you previously selected the dewar not to be returned, it was moved from the MX beamlines to security/reception for uplift by someone of your team. Please pick it up in the next 2-3 days.
+or
+3 - The dewar has been taken by yourself or someone in your team from the MX beamlines
+
+If you want to revert options 1 or 2 above please let us know ASAP (use reply to all)
+
+Best wishes,
+
+MX beamline staff
+
+-------------------------------------------------------------------------
+If you get too many emails or have questions, comments or feedback,
+please email mx@synchrotron.org.au
+Thanks for your support as we work to get your MX beamlines humming!

@@ -1,0 +1,12 @@
+Dear user of the MX beamlines,
+
+This is an automated email to let you know that a dewar associated with this email address (ID number {{dewar['name']}}) is currently registered as being present at the MX beamlines. A staff member has tried to find your dewar at the beamlines and has not been able to find it. If you have taken the dewar please email mx@synchrotron.org.au and let us know that you took your dewar. Next time, before you take your dewar please ensure it is scanned out of the system, beamline staff can show you how to do this. If you do not have your dewar then please also contact MX staff so that we know its here and can find it.
+
+Best wishes,
+
+MX beamline staff
+
+-------------------------------------------------------------------------
+If you get too many emails or have questions, comments or feedback,
+please email mx@synchrotron.org.au
+Thanks for your support as we work to get your MX beamlines humming!

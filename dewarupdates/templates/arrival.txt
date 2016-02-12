@@ -1,0 +1,12 @@
+Dear user of the MX beamlines,
+
+This is an automated email to let you know that a dewar associated with this email address (ID number {{dewar['name']}}) has arrived at the Australian Synchrotron and is now at the MX beamlines in the care of the beamline staff.
+
+Best wishes,
+
+MX beamline staff
+
+-------------------------------------------------------------------------
+If you get too many emails or have questions, comments or feedback,
+please email mx@synchrotron.org.au
+Thanks for your support as we work to get your MX beamlines humming!
