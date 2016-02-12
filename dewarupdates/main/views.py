@@ -1,6 +1,7 @@
 from flask import request, render_template, current_app, abort, jsonify, url_for
 import requests
 import json
+from threading import Thread
 from . import main
 from .. import printer
 from ..utils import dewar_filled_payload, dewar_departed_payload
@@ -8,7 +9,7 @@ from ..utils import dewar_filled_payload, dewar_departed_payload
 
 def print_arrival_slip(dewar_name):
     url = url_for('.arrival_slip', dewar_name=dewar_name, _external=True)
-    printer.print_page(url)
+    Thread(target=printer.print_page, args=(url,)).start()
 
 
 @main.route('/actions', methods=['POST'])
