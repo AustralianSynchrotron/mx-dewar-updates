@@ -15,5 +15,12 @@ setup(
         'pdfkit',
         'Flask-QRcode',
         'Flask-Bootstrap',
+        'socketIO_client',
+        'click',
     ],
+    entry_points={
+        'console_scripts': [
+            'dewarupdates=dewarupdates.monitor:main',
+        ],
+    },
 )

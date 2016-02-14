@@ -16,7 +16,7 @@ def print_file(filename, *, options=None):
 
 
 def print_page(url):
-    with NamedTemporaryFile(suffix='.pdf', delete=True) as file:
+    with NamedTemporaryFile(suffix='.pdf') as file:
+        print('Printing to %s' % file.name)
         page_to_pdf(url, file)
         print_file(file.name, options=['InputSlot=Tray2'])
-        # TODO: delete file
