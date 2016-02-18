@@ -4,7 +4,7 @@ from flask.ext.bootstrap import Bootstrap
 from .config import config
 
 
-__version__ = '0.2.0'
+__version__ = '0.3.1'
 
 
 qr_code = QRcode()

@@ -40,7 +40,7 @@ def test_get_dewar_arrival_page(client, db):
         'courier': 'Fast Deliveries',
         'courierAccount': '999',
         'container_type': 'pucks',
-        'expectedContainers': '1,2,3,4,5',
+        'expectedContainers': '1 | 2 | 3 | 4 | 5 |  |  | ',
     })
     response = client.get(url_for('main.arrival_slip', dewar_name='d-123a-1'))
     assert response.status_code == 200
@@ -60,7 +60,7 @@ def test_get_dewar_arrival_page(client, db):
     assert 'User wants samples returned by courier' in page.text
     assert 'Fast Deliveries' in page.find(id='courier').text
     assert '999' in page.find(id='courier_account').text
-    assert '1,2,3,4,5' in page.find(id='containers').text
+    assert '1 | 2 | 3 | 4 | 5 |  |  | ' in page.find(id='containers').text
 
 
 def test_arrival_slip_returns_404_when_dewar_doesnt_exist(client):
@@ -98,10 +98,19 @@ def test_arrival_slip_fits_on_one_page(running_app, db):
         'courier': 'Fast Deliveries',
         'courierAccount': '999',
         'container_type': 'pucks',
-        'expectedContainers': '1,2,3,4,5',
+        'expectedContainers': '1 | 2 | 3 | 4 | 5 |  |  | ',
     })
     url = url_for('main.arrival_slip', dewar_name='d-123a-1')
     with BytesIO() as file:
         page_to_pdf(url, file)
         reader = PdfFileReader(file)
         assert reader.numPages == 1
+
+
+def test_arrival_ship_shows_courier_none_if_field_is_empty(client, db):
+    db.clear()
+    db.add_dewar({'name': 'd-123a-1', 'courier': ''})
+    response = client.get(url_for('main.arrival_slip', dewar_name='d-123a-1'))
+    page = BeautifulSoup(response.data, 'html.parser')
+    assert page.find(id='courier').text == 'Using courier: none'
+    assert page.find(id='courier_account').text == 'With account number: none'

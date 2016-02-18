@@ -23,8 +23,8 @@
         {% if returnDewar %}
           <p>User wants samples returned by courier</p>
         {% endif %}
-        <p id="courier">Using courier {{courier}}</p>
-        <p id="courier_account">With account number {{courierAccount}}</p>
+        <p id="courier">Using courier: {{courier or 'none'}}</p>
+        <p id="courier_account">With account number: {{courierAccount or 'none'}}</p>
       </div>
       <div id="filled_code" class="col-xs-4">
         <div class="pull-right">
