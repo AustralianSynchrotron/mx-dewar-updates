@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8002/dewars/not-a-dewar
+  response:
+    body: {string: '{"error":"Not found"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['21']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 20 Feb 2016 09:24:39 GMT']
+      ETag: [W/"15-Lvrg4Gz9w+rMdDVG/1lddA"]
+      X-Powered-By: [Express]
+    status: {code: 404, message: Not Found}
+version: 1

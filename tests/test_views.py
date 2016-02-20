@@ -7,6 +7,10 @@ import zbarlight
 from PyPDF2 import PdfFileReader
 from io import BytesIO
 import json
+from vcr import VCR
+
+
+vcr = VCR(cassette_library_dir='tests/fixtures/cassettes')
 
 
 def decode_img(img):
@@ -21,6 +25,7 @@ def load_qrcode(image):
     return json.loads(code.decode('utf-8'))
 
 
+@vcr.use_cassette()
 def test_get_dewar_arrival_page(client, db):
     db.clear()
     db.add_dewar({
@@ -63,11 +68,13 @@ def test_get_dewar_arrival_page(client, db):
     assert '1 | 2 | 3 | 4 | 5 |  |  | ' in page.find(id='containers').text
 
 
+@vcr.use_cassette()
 def test_arrival_slip_returns_404_when_dewar_doesnt_exist(client):
     response = client.get(url_for('main.arrival_slip', dewar_name='not-a-dewar'))
     assert response.status_code == 404
 
 
+@vcr.use_cassette()
 def test_renders_qr_codes(client, db):
     db.clear()
     db.add_dewar({'name': 'd-123a-1'})
@@ -79,6 +86,7 @@ def test_renders_qr_codes(client, db):
     assert departed_data['type'] == 'SET_DEWAR_OFFSITE'
 
 
+@vcr.use_cassette()
 def test_arrival_slip_fits_on_one_page(running_app, db):
     db.clear()
     db.add_dewar({
@@ -107,6 +115,7 @@ def test_arrival_slip_fits_on_one_page(running_app, db):
         assert reader.numPages == 1
 
 
+@vcr.use_cassette()
 def test_arrival_ship_shows_courier_none_if_field_is_empty(client, db):
     db.clear()
     db.add_dewar({'name': 'd-123a-1', 'courier': ''})

@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: !!binary |
+      eyJ0eXBlIjogIlJFTU9WRV9BTEwifQ==
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['22']
+      Content-Type: [application/json]
+      User-Agent: [python-requests/2.9.1]
+    method: POST
+    uri: http://localhost:8002/actions
+  response:
+    body: {string: '{"data":"ok"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['13']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 20 Feb 2016 09:24:39 GMT']
+      ETag: [W/"d-vvhDqJWzrmOmZV4WYVDyGg"]
+      X-Powered-By: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!binary |
+      eyJkZXdhciI6IHsic3RyZWV0QWRkcmVzcyI6ICIxMjMgTWFpbiBSb2FkIiwgInBvc3Rjb2RlIjog
+      IjMwMDAiLCAiZXBuIjogIjEyM2EiLCAiY29udGFpbmVyX3R5cGUiOiAicHVja3MiLCAiY2l0eSI6
+      ICJCcmlzYmFuZSIsICJlbWFpbCI6ICJqYW5lQGV4YW1wbGUuY29tIiwgImluc3RpdHV0ZSI6ICJT
+      b21lIFVuaXZlcnNpdHkiLCAicmV0dXJuRGV3YXIiOiB0cnVlLCAic3RhdGUiOiAiUXVlZW5zbGFu
+      ZCIsICJwaG9uZSI6ICIxMTEtMjIyLTMzMyIsICJjb3VyaWVyQWNjb3VudCI6ICI5OTkiLCAiY291
+      bnRyeSI6ICJBdXN0cmFsaWEiLCAiZXhwZWN0ZWRDb250YWluZXJzIjogIjEgfCAyIHwgMyB8IDQg
+      fCA1IHwgIHwgIHwgIiwgIm5hbWUiOiAiZC0xMjNhLTEiLCAib3duZXIiOiAiSmFuZSIsICJkZXBh
+      cnRtZW50IjogIkNoZW1pc3RyeSIsICJjb3VyaWVyIjogIkZhc3QgRGVsaXZlcmllcyJ9LCAidHlw
+      ZSI6ICJBRERfREVXQVIifQ==
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['472']
+      Content-Type: [application/json]
+      User-Agent: [python-requests/2.9.1]
+    method: POST
+    uri: http://localhost:8002/actions
+  response:
+    body: {string: '{"data":"ok"}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['13']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 20 Feb 2016 09:24:39 GMT']
+      ETag: [W/"d-vvhDqJWzrmOmZV4WYVDyGg"]
+      X-Powered-By: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.9.1]
+    method: GET
+    uri: http://localhost:8002/dewars/d-123a-1
+  response:
+    body: {string: '{"data":{"_id":"56c830d756824aa1d3a9b74f","streetAddress":"123
+        Main Road","postcode":"3000","epn":"123a","city":"Brisbane","email":"jane@example.com","institute":"Some
+        University","returnDewar":true,"state":"Queensland","phone":"111-222-333","courierAccount":"999","country":"Australia","expectedContainers":"1
+        | 2 | 3 | 4 | 5 |  |  | ","name":"d-123a-1","owner":"Jane","department":"Chemistry","courier":"Fast
+        Deliveries","addedTime":"2016-02-20T09:24:39.668Z","__v":0}}'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['471']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Sat, 20 Feb 2016 09:24:40 GMT']
+      ETag: [W/"1d7-KS7X8IMaU1PsBxq7yt55RQ"]
+      X-Powered-By: [Express]
+    status: {code: 200, message: OK}
+version: 1
