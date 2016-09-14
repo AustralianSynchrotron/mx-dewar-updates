@@ -16,7 +16,7 @@ def send_email(subject, template, dewar, mailer):
     mailer.send(
         subject=subject,
         text_content=content,
-        from_email='mx@synchrotron.org.au',
+        from_email='mxlabs@synchrotron.org.au',
         to=[dewar['email']],
         cc=cc,
     )

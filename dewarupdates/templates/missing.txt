@@ -8,5 +8,5 @@ MX beamline staff
 
 -------------------------------------------------------------------------
 If you get too many emails or have questions, comments or feedback,
-please email mx@synchrotron.org.au
+please email mxlabs@synchrotron.org.au
 Thanks for your support as we work to get your MX beamlines humming!
