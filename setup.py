@@ -15,7 +15,6 @@ setup(
         'pdfkit',
         'Flask-QRcode',
         'Flask-Bootstrap',
-        'socketIO_client',
         'click',
         'MailShake',
         'jinja2',

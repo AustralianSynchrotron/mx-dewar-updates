@@ -11,6 +11,7 @@ echo "40bc014d0754ea44bb90e733f03e7c92862f7445ef581e3599ecc00711dddcaa /tmp/wkht
 sudo ln -s /opt/wkhtmltox/bin/* /usr/local/bin/
 git clone https://github.com/AustralianSynchrotron/mx-dewar-updates.git
 cd mx-dewar-updates
+pip3 install -r requirements.txt
 pip3 install .
 ```
 
@@ -34,7 +35,7 @@ git clone git@github.com:AustralianSynchrotron/mx-dewar-updates.git
 cd mx-dewar-updates
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 pip install -e .
 ```
 

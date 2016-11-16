@@ -20,6 +20,7 @@ qrcode==5.2.2
 requests==2.9.1
 six==1.10.0
 socketIO-client==0.6.5
+git+https://github.com/RobbieClarken/socketIO-client@utf8bug
 vcrpy==1.7.4
 visitor==0.1.2
 websocket-client==0.35.0
