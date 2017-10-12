@@ -51,8 +51,13 @@ docker build -t dewarupdates .
 
 #### Test
 
+In the [pucktracker-server](https://github.com/AustralianSynchrotron/pucktracker-server),
+use docker-compose.dev.yml to start the server.
+
 ```bash
-docker run dewarupdates py.test
+docker run -it --rm --net host \
+           -v $PWD/tests/fixtures/cassettes:/srv/app/tests/fixtures/cassettes \
+           dewarupdates py.test
 ```
 
 #### Run

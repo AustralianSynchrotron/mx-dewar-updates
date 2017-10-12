@@ -1,6 +1,9 @@
+import json
+
 from flask import request, render_template, current_app, abort, jsonify, url_for
 import requests
-import json
+from dateutil.parser import parse as parse_datetime
+
 from . import main
 from ..utils import dewar_filled_payload, dewar_departed_payload
 
@@ -13,6 +16,9 @@ def arrival_slip(dewar_name):
     data = body.get('data')
     if body.get('error') or not data:
         abort(404)
+    start_time = data.get('experimentStartTime')
+    if start_time:
+        data['experimentStartTime'] = parse_datetime(start_time).strftime('%Y-%m-%d %H:%M')
     data['filled_payload'] = dewar_filled_payload(dewar_name)
     data['departed_payload'] = dewar_departed_payload(dewar_name)
     return render_template('arrival-slip.html', **data)

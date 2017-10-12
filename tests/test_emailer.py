@@ -50,7 +50,7 @@ def test_send_arrival_email(dewar, mailer):
     assert email.subject == expected_subject
     assert 'is now at the MX beamlines' in email.text
     assert 'd-123a-1' in email.text
-    assert email.from_email == 'mx@synchrotron.org.au'
+    assert email.from_email == 'mxlabs@synchrotron.org.au'
     assert 'jane@example.com' in email.to
     assert 'someone@example.com' in email.cc
     assert 'someone.else@example.com' in email.cc

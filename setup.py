@@ -18,6 +18,7 @@ setup(
         'click',
         'MailShake',
         'jinja2',
+        'python-dateutil',
     ],
     entry_points={
         'console_scripts': [
