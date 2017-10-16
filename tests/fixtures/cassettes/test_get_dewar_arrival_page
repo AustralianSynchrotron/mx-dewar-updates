@@ -17,27 +17,28 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['13']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Thu, 12 Oct 2017 01:10:21 GMT']
+      Date: ['Mon, 16 Oct 2017 01:05:37 GMT']
       ETag: [W/"d-vvhDqJWzrmOmZV4WYVDyGg"]
       X-Powered-By: [Express]
     status: {code: 200, message: OK}
 - request:
     body: !!binary |
-      eyJkZXdhciI6IHsib3duZXIiOiAiSmFuZSIsICJjb250YWluZXJfdHlwZSI6ICJwdWNrcyIsICJl
-      cG4iOiAiMTIzYSIsICJiZWFtbGluZSI6ICJNWDEiLCAicmV0dXJuRGV3YXIiOiB0cnVlLCAic3Ry
-      ZWV0QWRkcmVzcyI6ICIxMjMgTWFpbiBSb2FkIiwgImluc3RpdHV0ZSI6ICJTb21lIFVuaXZlcnNp
-      dHkiLCAiY291bnRyeSI6ICJBdXN0cmFsaWEiLCAiZXhwZXJpbWVudFN0YXJ0VGltZSI6ICIyMDE3
-      LTAxLTAyVDAzOjA0OjA1IiwgInBvc3Rjb2RlIjogIjMwMDAiLCAic3RhdGUiOiAiUXVlZW5zbGFu
-      ZCIsICJwaG9uZSI6ICIxMTEtMjIyLTMzMyIsICJlbWFpbCI6ICJqYW5lQGV4YW1wbGUuY29tIiwg
-      ImNpdHkiOiAiQnJpc2JhbmUiLCAibmFtZSI6ICJkLTEyM2EtMSIsICJkZXBhcnRtZW50IjogIkNo
-      ZW1pc3RyeSIsICJleHBlY3RlZENvbnRhaW5lcnMiOiAiMSB8IDIgfCAzIHwgNCB8IDUgfCAgfCAg
-      fCAiLCAiY291cmllckFjY291bnQiOiAiOTk5IiwgImNvdXJpZXIiOiAiRmFzdCBEZWxpdmVyaWVz
-      In0sICJ0eXBlIjogIkFERF9ERVdBUiJ9
+      eyJkZXdhciI6IHsiY291bnRyeSI6ICJBdXN0cmFsaWEiLCAiZXBuIjogIjEyM2EiLCAiZXhwZXJp
+      bWVudFN0YXJ0VGltZSI6ICIyMDE3LTAxLTAyVDAzOjA0OjA1WiIsICJjb3VyaWVyIjogIkZhc3Qg
+      RGVsaXZlcmllcyIsICJzdGF0ZSI6ICJRdWVlbnNsYW5kIiwgImNvbnRhaW5lcl90eXBlIjogInB1
+      Y2tzIiwgImV4cGVyaW1lbnRFbmRUaW1lIjogIjIwMTgtMDEtMDJUMDM6MDQ6MDVaIiwgInBvc3Rj
+      b2RlIjogIjMwMDAiLCAiZW1haWwiOiAiamFuZUBleGFtcGxlLmNvbSIsICJzdHJlZXRBZGRyZXNz
+      IjogIjEyMyBNYWluIFJvYWQiLCAiYmVhbWxpbmUiOiAiTVgxIiwgImRlcGFydG1lbnQiOiAiQ2hl
+      bWlzdHJ5IiwgImluc3RpdHV0ZSI6ICJTb21lIFVuaXZlcnNpdHkiLCAibmFtZSI6ICJkLTEyM2Et
+      MSIsICJvd25lciI6ICJKYW5lIiwgImNvdXJpZXJBY2NvdW50IjogIjk5OSIsICJjaXR5IjogIkJy
+      aXNiYW5lIiwgInJldHVybkRld2FyIjogdHJ1ZSwgImV4cGVjdGVkQ29udGFpbmVycyI6ICIxIHwg
+      MiB8IDMgfCA0IHwgNSB8ICB8ICB8ICIsICJwaG9uZSI6ICIxMTEtMjIyLTMzMyJ9LCAidHlwZSI6
+      ICJBRERfREVXQVIifQ==
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      Content-Length: ['537']
+      Content-Length: ['583']
       Content-Type: [application/json]
       User-Agent: [python-requests/2.9.1]
     method: POST
@@ -48,7 +49,7 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['13']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Thu, 12 Oct 2017 01:10:21 GMT']
+      Date: ['Mon, 16 Oct 2017 01:05:37 GMT']
       ETag: [W/"d-vvhDqJWzrmOmZV4WYVDyGg"]
       X-Powered-By: [Express]
     status: {code: 200, message: OK}
@@ -62,15 +63,16 @@ interactions:
     method: GET
     uri: http://localhost:8000/dewars/d-123a-1
   response:
-    body: {string: '{"data":{"_id":"59dec0fd497cc81a00bdb2a8","owner":"Jane","epn":"123a","beamline":"MX1","returnDewar":true,"streetAddress":"123
-        Main Road","institute":"Some University","country":"Australia","experimentStartTime":"2017-01-02T03:04:05.000Z","postcode":"3000","state":"Queensland","phone":"111-222-333","email":"jane@example.com","city":"Brisbane","name":"d-123a-1","department":"Chemistry","expectedContainers":"1
-        | 2 | 3 | 4 | 5 |  |  | ","courierAccount":"999","courier":"Fast Deliveries","addedTime":"2017-10-12T01:10:21.218Z","__v":0}}'}
+    body: {string: '{"data":{"_id":"59e405e1eddbfa1900100c7a","country":"Australia","epn":"123a","experimentStartTime":"2017-01-02T03:04:05.000Z","courier":"Fast
+        Deliveries","state":"Queensland","experimentEndTime":"2018-01-02T03:04:05.000Z","postcode":"3000","email":"jane@example.com","streetAddress":"123
+        Main Road","beamline":"MX1","department":"Chemistry","institute":"Some University","name":"d-123a-1","owner":"Jane","courierAccount":"999","city":"Brisbane","returnDewar":true,"expectedContainers":"1
+        | 2 | 3 | 4 | 5 |  |  | ","phone":"111-222-333","addedTime":"2017-10-16T01:05:37.801Z","__v":0}}'}
     headers:
       Connection: [keep-alive]
-      Content-Length: ['537']
+      Content-Length: ['584']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Thu, 12 Oct 2017 01:10:21 GMT']
-      ETag: [W/"219-EaG/eAiahuVwYUqEPxi3Fw"]
+      Date: ['Mon, 16 Oct 2017 01:05:37 GMT']
+      ETag: [W/"248-XNMPLyFcRcVv9bSNJu1VjA"]
       X-Powered-By: [Express]
     status: {code: 200, message: OK}
 version: 1

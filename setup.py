@@ -19,6 +19,7 @@ setup(
         'MailShake',
         'jinja2',
         'python-dateutil',
+        'pytz',
     ],
     entry_points={
         'console_scripts': [

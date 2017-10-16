@@ -41,7 +41,8 @@ def test_get_dewar_arrival_page(client, db):
         'phone': '111-222-333',
         'email': 'jane@example.com',
         'epn': '123a',
-        'experimentStartTime': '2017-01-02T03:04:05',
+        'experimentStartTime': '2017-01-02T03:04:05Z',
+        'experimentEndTime': '2018-01-02T03:04:05Z',
         'beamline': 'MX1',
         'returnDewar': True,
         'courier': 'Fast Deliveries',
@@ -63,7 +64,8 @@ def test_get_dewar_arrival_page(client, db):
     assert '111-222-333' in page.find(id='phone').text
     assert 'jane@example.com' in page.find(id='email').text
     assert '123a' in page.find(id='epn').text
-    assert '2017-01-02 03:04' in page.find(id='start_time').text
+    assert '2017-01-02 14:04' in page.find(id='start_time').text
+    assert '2018-01-02 14:04' in page.find(id='end_time').text
     assert 'MX1' in page.find(id='beamline').text
     assert 'd-123a-1' in page.find(id='name').text
     assert 'User wants samples returned by courier' in page.text
